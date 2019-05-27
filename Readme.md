@@ -110,7 +110,7 @@ Disadvantages
 Demonstration Video/Prototype Demo
 =====================
 
-[![Watch the Demo](https://github.com/sachinjegaonkar/MarketplaceSolution/blob/master/Demo.jpg)](https://youtu.be/K6KH5WyjSpA)
+[![Watch the Demo](https://github.com/sachinjegaonkar/MarketplaceSolution/blob/master/Demo.png)](https://youtu.be/K6KH5WyjSpA)
 
 
 Challenges Faced

@@ -5,12 +5,7 @@ module.exports = {
     development: {
       host: "127.0.0.1",
       port: 7545,
-      gas: 5500000,        // Ropsten has a lower block limit than mainnet
       network_id: "*" // Match any network id
-    },
-    develop: {
-      port: 8545,
-      gas: 5500000,        // Ropsten has a lower block limit than mainnet
     }
   }
 };

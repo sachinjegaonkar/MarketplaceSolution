@@ -1,0 +1,49 @@
+﻿/*Added by Vaibhav Patil*/
+
+
+html {
+    background-color: #f9f9f9;
+    min-height: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+    .ui-page {
+        width: 600px !important;
+        margin: 0 auto !important;
+        position: relative !important;
+        border-right: 5px #666 outset !important;
+        border-left: 5px #666 outset !important;
+        min-height: 100%;
+    }
+
+    #flight_border {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    #Leave_base {
+        width: 70%;
+    }
+}
+
+/*.header_FX
+    {
+        position:fixed;
+        width:100%;
+         z-index: 9999999 !important;
+    }*/
+
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;
+}
+
+    /* Anytime the body has the loading class, our
+   modal element will be visible */
+    body.loading .modal {
+        display: block;
+    }
+
+

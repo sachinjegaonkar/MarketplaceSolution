@@ -126,3 +126,32 @@ Possible Improvements
 * Use more machine learning models to introduce more easy decision making for the buyers and sellers
 * Improve Scalability – Make it generic to make this solution to be reusable for other marketplaces
 * Improve the User Interface
+
+Extended Problem Statement
+=====================
+
+Be creative in your approach:
+1. Task #1: Digital Creation of identities
+Example: Mapping Physical Assets with Digital Twin
+2. Task #2: Demonstrator of fairness in Trade
+Example: Data market place allows only fair trading; meaning the no seller or buyer favored at any point of time.
+3. Task #3: Data authenticity of the data source
+Example: Ensure Authentic IoT device sending untampered data.
+
+Deliverables
+=====================
+
+* UI
+* App (Middleware to connect to Blockchain)
+* Smart Contract
+* Blockchain Network
+
+Evaluation Criteria
+=====================
+
+* Implementation (15%)
+* Performance (30 %)
+* Creativity (25 %)
+* Scalability (15 %)
+* Presentation (15 %)
+* Extended Problem Statement (Bonus Points)

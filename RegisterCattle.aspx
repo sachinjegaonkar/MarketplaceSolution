@@ -25,7 +25,12 @@
     <script src="script/jquery.ui.datepicker.js"></script>
     <script src="script/jquery.mobile.datepicker.js"></script>
     
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+    
     <script>
         InitBrowser("css/BrowserCss.css");
 
@@ -217,8 +222,7 @@
        
 
         function SaveOnClick() {
-
-
+            App.registerCattle();
         }
 
         
@@ -303,38 +307,30 @@
             <div data-role="content">
                 <table style="width: 60%;" align="center">
                     <tr>
-                        <label for="txtUpdate_cattle_health."><b>Update Cattle Health.</b></label>
+                        <label for="txtUpdate_cattle_health."><b>Update Cattle Health</b></label>
                     </tr>
                     <tr>
                         <td align="center">
-                            <input type="radio" name="radio-choice-1" id="radiodaily" value="B" checked="checked" data-inline="true" onclick="return HideShowDive(this)" />&nbsp;&nbsp;&nbsp;<label for="radio-choice-2">Bad</label>
+                            <input type="radio" name="radio-choice-1" id="radiodaily" value="B" checked="checked" data-inline="true" />&nbsp;&nbsp;&nbsp;<label for="radio-choice-2">Bad</label>
                         </td>
                         <td align="center">
-                            <input type="radio" name="radio-choice-1" id="radioweekly" value="G" onclick="return HideShowDive(this)" />&nbsp;&nbsp;&nbsp;&nbsp;<label for="radio-choice-2">Good</label>
+                            <input type="radio" name="radio-choice-1" id="radioweekly" value="G" />&nbsp;&nbsp;&nbsp;&nbsp;<label for="radio-choice-2">Good</label>
                         </td>
                         <td align="center">
-                            <input type="radio" name="radio-choice-1" id="radioweekly" value="BE" onclick="return HideShowDive(this)" />&nbsp;&nbsp;&nbsp;&nbsp;<label for="radio-choice-2">better</label>
+                            <input type="radio" name="radio-choice-1" id="radioweekly" value="BE" />&nbsp;&nbsp;&nbsp;&nbsp;<label for="radio-choice-2">better</label>
                         </td>
                         <td align="center">
-                            <input type="radio" name="radio-choice-1" id="radioweekly" value="BS" onclick="return HideShowDive(this)" />&nbsp;&nbsp;&nbsp;&nbsp;<label for="radio-choice-2">best</label>
+                            <input type="radio" name="radio-choice-1" id="radioweekly" value="BS" />&nbsp;&nbsp;&nbsp;&nbsp;<label for="radio-choice-2">best</label>
                         </td>
                     </tr>
                 </table>
             </div>
-            <p>
-                <label for="health_certificate"><b>Health Certificate</b></label>
-                <input type="text" name="health_certificate" id="health_certificate" style="height: 12px;" />
-            </p>
              <p>
                 <label for="description"><b>Description</b></label>
                 <input type="text" name="description" id="txtDescription" style="height: 12px;" />
             </p>
             
-            
-            
         </div>
-
-        
 
         <div style="text-align: center" id="Add_removeeq">
             <br />

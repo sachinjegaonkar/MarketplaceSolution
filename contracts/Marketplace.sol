@@ -217,16 +217,16 @@ contract MarketPlace is Owned {
         // - farmer should be the owner of the cattle, the ownership of the cow milk has to be transferred
     }
 
-    function RegisterCattle(address _new_cattle, string memory _name, uint _age, string memory _breed, uint _lastCalfBirth, bool _isCow, uint _milkInLiters/*?*/, string memory _health/*?*/, string memory _description) public {
+    function RegisterCattle(string memory _name, uint _age, string memory _breed, uint _lastCalfBirth, bool _isCow, uint _milkInLiters/*?*/, string memory _health/*?*/, string memory _description) public {
         // - owner should be registered before hand into the system, - health last updated, - get health confirmation from the veterinarians
-        for (uint i = 0; i < Cattles.length; i++)
-        {
-            require(Cattles[i].cattle_address != _new_cattle, "Cattle already added into the network!");
-        }
+        //for (uint i = 0; i < Cattles.length; i++)
+        //{
+        //    require(Cattles[i].cattle_address != _new_cattle, "Cattle already added into the network!");
+        //}
 
         Cattles.push(Cattle({
             cattle_id: ++cattleCounter,                             // unique id of the cattle
-            cattle_address: _new_cattle,                            // blockchain identifier of the cattle
+            cattle_address: dummyCattles[Cattles.length % (dummyCattles.length - 1)],                            // blockchain identifier of the cattle
             owner:msg.sender, 
             name: _name, 
             age: _age, 
@@ -243,7 +243,7 @@ contract MarketPlace is Owned {
         {
             if (Farmers[i].farmer_address == msg.sender)
             {
-                cattle_to_owner_map[_new_cattle] = Farmers[i];  // This Farmer is the owner of the cattle
+                cattle_to_owner_map[dummyCattles[Cattles.length % (dummyCattles.length - 1)]] = Farmers[i];  // This Farmer is the owner of the cattle
                 break;
             }
         }

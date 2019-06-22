@@ -167,7 +167,6 @@ App = {
 
       var last_caft_birth = $('#last_caft_birth').val();
       var cattleHealth = $('#radio-choice-1').val();
-      var health_certificate = $('#health_certificate').val();
       var description = $('#description').val();
 
       App.contracts.Marketplace.deployed().then(function(instance) {

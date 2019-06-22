@@ -93,7 +93,7 @@
                 return false;
             }
 
-            window.location.href = "Home_Screen.aspx";
+            window.location.href = "HomeScreen.aspx";
             //var abt = {
             //    "DeviceID": "''",
             //    "DeviceType": "''",

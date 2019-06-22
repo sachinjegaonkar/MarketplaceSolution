@@ -80,12 +80,18 @@ Technology/Tool/Cloud Stack
 Steps to Compile
 =====================
 
-* truffle init
+* node -v
+* npm install -g truffle
+* mkdir marketplace
+* cd marketplace
+* truffle.cmd init
+* truffle.cmd unbox pet-shop
+* touch contracts/Marketplace.sol
+* touch migrations/2_deploy_contracts.js
 * truffle.cmd compile
-* truffle.cmd test
-* truffle.cmd migrate --network ropsten OR
+* truffle.cmd migrate --reset --all
+* npm run dev
 * Use 'remix-ide' command - to deploy on ropsten network and test the contracts
-
 
 Advantages
 =====================

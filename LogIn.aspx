@@ -242,7 +242,6 @@
     </div>
 
      <div class="header_FX" data-role="header" style="overflow: visible;background-image: url(images/Header.png)">
-        <a class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all ui-btn-left" href="#" onclick="javascript:{ window.location.href = 'Master_Screen.aspx'; }">No text</a>
         <h1>Log In</h1>
         <div data-role="navbar">
         </div>
@@ -268,23 +267,18 @@
                 <table style="width: 100%;" role="main" class="ui-content">
                     <tr>
                         <td style="width: 30%">
-                            <label for="text-1">Email :</label>
+                            <label for="text-1">Email</label>
                         </td>
                         <td style="width: 60%">
                             <input name="txtUser" id="txtUser" type="text" value="" width="50" /></td>
                     </tr>
                     <tr>
                         <td style="width: 30%">
-                            <label for="text-1">Password :</label></td>
+                            <label for="text-1">Password</label></td>
                         <td style="width: 60%">
-                            <input type="password" data-clear-btn="false" name="txtpassword" id="txtpassword" autocomplete="off" value="" width="50" /></td>
+                            <input type="password" data-clear-btn="false" name="txtpassword" id="txtpassword" placeholder="password" autocomplete="off" value="" width="50" /></td>
                     </tr>
-                    <tr>
-                        <td style="width: 30%">
-                            <label for="text-1">2 Steps Verification Code :</label></td>
-                        <td style="width: 60%">
-                            <input type="password" data-clear-btn="false" name="txtpassword" id="txtpassword" autocomplete="off" value="" width="50" /></td>
-                    </tr>
+
                 </table>
             </td>
         </tr>

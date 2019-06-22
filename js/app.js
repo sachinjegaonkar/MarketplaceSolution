@@ -4,7 +4,6 @@ App = {
   account: '0x0',
   hasVoted: false,
 
-
   // ------------------------
   d: [
     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -131,44 +130,6 @@ App = {
         $("#accountAddress").html("Your Account: " + account);
       }
     });
-
-    // Load contract data
-    /*App.contracts.Marketplace.deployed().then(function(instance) {
-      marketplaceInstance = instance;
-      return marketplaceInstance.candidatesCount();
-    }).then(function(candidatesCount) {
-      var candidatesResults = $("#candidatesResults");
-      candidatesResults.empty();
-
-      var candidatesSelect = $('#candidatesSelect');
-      candidatesSelect.empty();
-
-      for (var i = 1; i <= candidatesCount; i++) {
-        marketplaceInstance.candidates(i).then(function(candidate) {
-          var id = candidate[0];
-          var name = candidate[1];
-          var voteCount = candidate[2];
-
-          // Render candidate Result
-          var candidateTemplate = "<tr><th>" + id + "</th><td>" + name + "</td><td>" + voteCount + "</td></tr>"
-          candidatesResults.append(candidateTemplate);
-
-          // Render candidate ballot option
-          var candidateOption = "<option value='" + id + "' >" + name + "</ option>"
-          candidatesSelect.append(candidateOption);
-        });
-      }
-      return marketplaceInstance.voters(App.account);
-    }).then(function(hasVoted) {
-      // Do not allow a user to vote
-      if(hasVoted) {
-        $('form').hide();
-      }
-      //loader.hide();
-      //content.show();
-    }).catch(function(error) {
-      console.warn(error);
-    });*/
   },
 
   createAccount: function() {
@@ -180,29 +141,44 @@ App = {
       var accountType = $('#user_type').val();
       var identity = 1;
 
-    if (accountType == 1) // farmer
-    {
-      //var valid = App.isValidNumber(identity);
-      //if (valid){
-      //  alert('Valid Aadhar ID');
-      //}else{
-      //  alert('Invalid Aadhar ID');
-      //}
+      if (accountType == 1) // farmer
+      {
+        // Validate aadhar Id
+      }
 
-      
-    }
+      App.contracts.Marketplace.deployed().then(function(instance) {
+        return instance.registerAccount(accountType, name, emailId, resAddress, phone, password1, identity, { from: App.account });
+      }).then(function(result) {
+        // Wait for votes to update
+        //$("#content").hide();
+        //$("#loader").show();
+      }).catch(function(err) {
+        console.error(err);
+      });
+  },
 
-    // Validate password1 and password2
-    App.contracts.Marketplace.deployed().then(function(instance) {
-      return instance.registerAccount(accountType, name, emailId, resAddress, phone, password1, identity, { from: App.account });
-    }).then(function(result) {
-      // Wait for votes to update
-      //$("#content").hide();
-      //$("#loader").show();
-    }).catch(function(err) {
-      console.error(err);
-    });
+  registerCattle: function() {
+      var txtCattleName = $('#txtCattleName').val();
+      var Birth_Date = $('#Birth_Date').val();
+      var Breed_Type = $('#Breed_Type').val();
+      var milk_in_ltrs = $('#milk_in_ltrs').val();
+      var cattle_sex = $('#cattle_sex').val();
+      var location = $('#location').val();
 
+      var last_caft_birth = $('#last_caft_birth').val();
+      var cattleHealth = $('#radio-choice-1').val();
+      var health_certificate = $('#health_certificate').val();
+      var description = $('#description').val();
+
+      App.contracts.Marketplace.deployed().then(function(instance) {
+        return instance.RegisterCattle(txtCattleName, Birth_Date, Breed_Type, last_caft_birth, cattle_sex == 'F', milk_in_ltrs, cattleHealth, description, { from: App.account });
+      }).then(function(result) {
+        // Wait for votes to update
+        //$("#content").hide();
+        //$("#loader").show();
+      }).catch(function(err) {
+        console.error(err);
+      });
   },
 
   castVote: function() {

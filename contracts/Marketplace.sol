@@ -69,6 +69,11 @@ contract MarketPlace is Owned {
     mapping(uint => Cattle) public cattles_for_sell_map;
     uint cattlesForSellCount;
 
+    address[2] dummyFarmers = [0x02e292B88FAF7ca8118b66956faf418724bC3B30, 0x86F6d73036673B379b2b97e6b02f6B100815C7fA];
+    address[6] dummyCattles = [0xfC8CDa1B389223fA8b827687Cd4124C6F2936a7D, 0xF03Bf8432548F49B2782dE4A4a37D1BCb7115557, 0x2FcB336F47dfc35bB68cF595F1C352Fab47E701e, 0x58536970581B2D7D0D789fD4b7297e7D18aDe90E, 0x53ea6c69BD5d0906c226e9Cba5b7D4177656FA06, 0xbd588caC001Ef83e5ddd3021647d5041B19202f5];
+    address dummyDairy = 0x0C07945aC6f20B409248CDBBffac32265e71a444;
+    address dummyVeterinarian = 0x2CD001b47Abd5bB9BBfd8d01f30F0B76917Fa496;
+ 
     //Events
     event sellCattleEvent(
     uint indexed _id,
@@ -110,14 +115,14 @@ contract MarketPlace is Owned {
         
         if (_accountType == 1)     // Farmer
         {
-            for (uint i = 0; i < Farmers.length; i++)
-            {
-                //require(Farmers[i].farmer_address != _new_farmer, "Farmer already added into the network!");
-            }
+            //for (uint i = 0; i < Farmers.length; i++)
+            //{
+            //    require(Farmers[i].farmer_address != _new_farmer, "Farmer already added into the network!");
+            //}
             
             Farmers.push(Farmer({
                 aadhaar: _identity,
-                farmer_address: msg.sender,//farmer_address: _new_farmer,
+                farmer_address: dummyFarmers[Farmers.length % (dummyFarmers.length - 1)],
                 name: _name,
                 residence_address: _resAddress,
                 email: _emailId,
@@ -126,18 +131,31 @@ contract MarketPlace is Owned {
         }
         else if (_accountType == 2)     // Veterinarian
         {
-    
+            //for (uint i = 0; i < Veterinarians.length; i++)
+            //{
+            //    require(Veterinarians[i].veterinarians_address != _new_veterinarian, "Veterinarian already added into the network!");
+            //}
+
+            Veterinarians.push(Veterinarian({
+                veterinarians_id: ++veterinarianCounter,                       // unique id of the Veterinarian
+                veterinarians_address: dummyVeterinarian,              // blockchain identifier of the Veterinarian
+                name: _name,
+                residence_address: _resAddress,
+                email: _emailId,
+                phone: _phone,
+                description: ""
+            }));
         }
         else if (_accountType == 3)     // Dairy Company
         {
-            for (uint i = 0; i < Dairy_Companies.length; i++)
-            {
-                //require(Dairy_Companies[i].dairy_company_address != _new_dairy, "Dairy already added into the network!");
-            }
+            //for (uint i = 0; i < Dairy_Companies.length; i++)
+            //{
+            //    //require(Dairy_Companies[i].dairy_company_address != _new_dairy, "Dairy already added into the network!");
+            //}
 
             Dairy_Companies.push(Dairy_Company({
                 dairy_id: ++dairyCounter,                             // unique id of the dairy_company
-                dairy_company_address: msg.sender,//dairy_company_address: _new_dairy,              // blockchain identifier of the dairy_company
+                dairy_company_address: dummyDairy,              // blockchain identifier of the dairy_company
                 name: _name,
                 residence_address: _resAddress,
                 email: _emailId,
@@ -199,7 +217,7 @@ contract MarketPlace is Owned {
         // - farmer should be the owner of the cattle, the ownership of the cow milk has to be transferred
     }
 
-    function RegisterCattle(address _new_cattle, string memory _name, address _owner, uint _age, string memory _breed, uint _lastCalfBirth, bool _isCow, uint _milkInLiters/*?*/, string memory _health/*?*/, string memory _description) public {
+    function RegisterCattle(address _new_cattle, string memory _name, uint _age, string memory _breed, uint _lastCalfBirth, bool _isCow, uint _milkInLiters/*?*/, string memory _health/*?*/, string memory _description) public {
         // - owner should be registered before hand into the system, - health last updated, - get health confirmation from the veterinarians
         for (uint i = 0; i < Cattles.length; i++)
         {

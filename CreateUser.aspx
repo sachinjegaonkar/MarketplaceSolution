@@ -39,11 +39,6 @@
 
         $(document).ready(function () {
 
-            $.get("../Main.xml", function (data) {
-                var dt = $(data).find('WEBSER_RSMART').text();
-                Get_UrL = dt.replace(/(\r\n|\n|\r)/gm, "");
-            });
-
             $("#pui").show();
             $("#pli").hide();
             $("#preg").hide();
@@ -206,8 +201,8 @@
 
     <div data-role="header" style="overflow: visible; background-image: url(images/Header.png); height: 40px;">
         <div style="width: 35%; height: 40px; float: left">
-            <a onclick="javascript:{ window.location.href = '../Home_Screen.aspx'; }" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-btn-left" href="#">&nbsp;</a>
-            <img src="../images/ic_CMP_logo.png" alt="" style="margin-left: 50px; width: 80px; height: 40px" />
+            <a onclick="javascript:{ window.location.href = 'HomeScreen.aspx'; }" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-btn-left" href="#">&nbsp;</a>
+            <img src="images/ic_CMP_logo.png" alt="" style="margin-left: 50px; width: 80px; height: 40px" />
         </div>
         <div style="width: 30%; height: 40px; float: left; line-height: 40px; text-align: center;">
             Create Account
@@ -247,11 +242,11 @@
             </p>
             <p>
                 <label for="txtpassword"><b>Password</b></label>
-                <input type="text" name="txtpassword" id="txtpassword" />
+                <input type="password" name="txtpassword" placeholder="password" id="txtpassword" />
             </p>
             <p>
                 <label for="txtconf_password"><b>Confirm Password</b></label>
-                <input type="text" name="txtconf_password" id="txtconf_password" />
+                <input type="password" name="txtconf_password" placeholder="password" id="txtconf_password" />
             </p>
             <p>
                 <label for="user_type"><b>Acoount Type</b></label>

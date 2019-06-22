@@ -1,6 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Home_Screen.aspx.cs" Inherits="Home_Screen" %>
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -239,8 +237,8 @@
 
     <div data-role="header" style="overflow: visible;background-image: url(images/Header.png);height:40px;">
       <div style="width:40%;height:40px;float:left">
-            <a class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all ui-btn-left" href="#" onclick="javascript:{  window.location.href = 'Master_Screen.aspx'; }">&nbsp;</a>
-            <img  src="images/ic_rsmart_logo.png" alt="" style="margin-left:50px;width: 80px; height: 40px" />
+            <a class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all ui-btn-left" href="#">&nbsp;</a>
+            <img  src="images/ic_CMP_logo.png" alt="" style="margin-left:50px;width: 80px; height: 40px" />
    </div>
         <div style="width:20%;height:40px;float:left;line-height:40px;text-align:center;">
         Cattle Market
@@ -249,8 +247,6 @@
         <a class="ui-btn ui-icon-power ui-btn-icon-notext ui-corner-all ui-btn-right" href="#" onclick="LogOut();">&nbsp;</a>
            <img id="comp_logo"    alt="" style="margin-right:40px; width: 80px; height: 40px" />
           </div>
-       <%-- <div data-role="navbar">
-        </div>--%>
     </div>
     <br />
     <div data-role="content">
@@ -260,7 +256,7 @@
                 <td align="center">
                    <div is="icon" style="width:150px; height:140px; position:relative">
       <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>
-      <a href="#" id="myflight" onclick="javascript:{callpage('AddCattle/RegisterCattle.aspx')}" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;width:50%;background-image: url(images/Buy_Cattle.png); background-size: 50% 50%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>
+      <a href="#" id="myflight" onclick="javascript:{callpage('BuyCattle.aspx')}" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;width:50%;background-image: url(images/SDN.png); background-size: 95% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>
       <div style="text-align:center;">Buy Cattle</div>
     </div>
                    
@@ -269,8 +265,8 @@
                   
                      <div is="icon" style="width:150px; height:140px; position:relative">
       <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>
-      <a href="#" id="leave" onclick="javascript:{  window.location.href = 'Leave/Leave.aspx'; }" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;width:50%;background-image: url(images/Leave.png); background-size: 95% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>
-      <div style="text-align:center;">Register My Cattle</div>
+      <a href="#" id="leave" onclick="javascript:{  window.location.href = 'RegisterCattle.aspx'; }" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;width:50%;background-image: url(images/Leave.png); background-size: 95% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>
+      <div style="text-align:center;">Register Cattle</div>
     </div>
 
                 </td>
@@ -280,7 +276,7 @@
                 <td align="center">
                    <div is="icon" style="width:150px; height:140px; position:relative">
       <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>
-      <a href="#" id="action" onclick="javascript:{ window.location.href = 'Notification/Notification.aspx'; }" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;width:50%;background-image: url(images/Notify.png); background-size: 95% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>
+      <a href="#" id="action" onclick="javascript:{ window.location.href = 'SellCattle.aspx'; }" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;width:50%;background-image: url(images/Notify.png); background-size: 95% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>
       <div style="text-align:center;">Sell Cattle</div>
     </div>
                    
@@ -289,7 +285,7 @@
                   
                      <div is="icon" style="width:150px; height:140px; position:relative">
       <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>
-      <a href="#" id="roster" onclick="javascript:{ window.location.href = 'Roster/Roster.aspx'; }"   class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;width:50%;background-image: url(images/Roster.png); background-size: 95% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>
+      <a href="#" id="roster" onclick="javascript:{ window.location.href = 'SellMilk.aspx'; }"   class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;width:50%;background-image: url(images/Roster.png); background-size: 95% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;"></a>
       <div style="text-align:center;">Sell Milk</div>
     </div>
 
@@ -300,7 +296,7 @@
                 <td align="center">
                     <div is="icon" style="width:150px; height:140px; position:relative">
                         <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>
-                        <a href="#" id="sdn"  class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;width:50%;background-image: url(images/SDN.png); background-size: 95% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;">
+                        <a href="#" id="sdn"  onclick="javascript:{ window.location.href = 'LiveAuction.aspx'; }" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;width:50%;background-image: url(images/SDN.png); background-size: 95% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;">
                         <span class="ui-icon ui-icon-locked ui-btn-left"></span>
                         </a>
                         <div style="text-align:center;">Live Auction</div>
@@ -309,10 +305,10 @@
                 <td align="center" >
                     <div is="icon" style="width:150px; height:140px; position:relative">
                         <span class="ui-li-count" style="position:absolute; display:none; z-index:1; right:0; top:6px;"></span>
-                        <a href="#" id="AddFlight" onclick="javascript:{ window.location.href = 'AddFlight/AddFlight.aspx'; }" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;width:50%;background-image: url(images/SDN.png); background-size: 95% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;">
+                        <a href="#" id="AddFlight" onclick="javascript:{ window.location.href = 'UpdateCattleHealth.aspx'; }" class="ui-btn ui-mini ui-corner-all ui-shadow" style="display:block;margin:5px;height:50%;width:50%;background-image: url(images/SDN.png); background-size: 95% 80%; background-position: 50% 50%; background-repeat: no-repeat no-repeat;">
                         <span class="ui-icon ui-icon-locked ui-btn-left"></span>
                         </a>
-                        <div style="text-align:center;">Add XYZ</div>
+                        <div style="text-align:center;">Update Cattle Health</div>
                     </div>
                 </td>
             </tr>

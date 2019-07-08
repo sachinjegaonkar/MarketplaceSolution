@@ -1,0 +1,19 @@
+The Ultimate Ethereum Dapp Tutorial (How to Build a Full Stack Decentralized Application Step-By-Step)
+http://www.dappuniversity.com/articles/the-ultimate-ethereum-dapp-tutorial
+
+Votereum: An Ethereum-Based E-Voting System
+https://ieeexplore.ieee.org/document/8713661
+
+A guide to developing an Ethereum decentralized voting application
+https://www.freecodecamp.org/news/developing-an-ethereum-decentralized-voting-application-a99de24992d9/
+
+BroncoVote: Secure Voting System using Ethereum’s Blockchain
+https://www.scitepress.org/papers/2018/66097/66097.pdf
+
+Installing Dependencies
+    Node Package Manager (NPM)
+    Truffle Framework
+    Ganache - Download and open it
+        Start Ganache Desktop Application - a local in-memory blockchain. It will give us 10 external accounts with addresses on our local Ethereum blockchain. Each account is preloaded with 100 fake ether.
+    Metamask
+    Syntax Highlighting - Sublime Text
